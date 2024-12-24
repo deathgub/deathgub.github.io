@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Official Date</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/css/splide.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(120deg, #ff99c8, #ffe6e6, #ff99c8);
+            background-size: 200% 200%;
+            animation: moveBackground 6s infinite;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        header {
+            background-color: #ff99c8;
+            color: white;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .splide {
+            max-width: 600px;
+            margin: 50px auto;
+        }
+        .splide__slide img {
+            max-width: 100%;
+            height: auto;
+            border: 5px solid #ff99c8; /* Pink border */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .text {
+            background: #ffe6e6;
+            color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 1.3rem;
+            line-height: 1.8;
+            text-align: left;
+            max-width: 50%;
+            margin: 20px auto;
+        }
+        .arrow-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px; /* Space between the arrows */
+            margin-top: 20px;
+        }
+        .arrow {
+            font-size: 2rem;
+            color: #e60073;
+            cursor: pointer;
+            animation: arrowBounce 1.5s infinite;
+        }
+        .arrow:hover {
+            color: #cc005f;
+        }
+        @keyframes moveBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        @keyframes arrowBounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>First Sleepover + Matching Outfits</h1>
+    </header>
+
+    <section id="image-carousel" class="splide" aria-label="Memory Carousel">
+        <div class="splide__track">
+            <ul class="splide__list">
+                <li class="splide__slide">
+                    <img src="pic11.jpg" alt="Memory 1">
+                </li>
+                <li class="splide__slide">
+                    <img src="pic12.jpg" alt="Memory 2">
+                </li>
+                <li class="splide__slide">
+                    <img src="pic13.jpg" alt="Memory 3">
+                </li>
+                <li class="splide__slide">
+                    <img src="pic14.jpg" alt="Memory 4">
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="text">
+        <p>This was our first sleepover! although the GSU beds were tiny and I ended up putting my dawgs in your face (sorry!) I still had a lot of fun spending the night with you!! I loved that we had matching outifts and went to our finals the next morning, this was such a fun time even though it was finals</p>
+    </div>
+
+    <!-- Upward and Downward Navigation Arrows -->
+    <div class="arrow-container">
+        <div class="arrow" onclick="window.location.href='page4.html';">
+            &#x2191; <!-- Upward arrow -->
+        </div>
+        <div class="arrow" onclick="window.location.href='page6.html';">
+            &#x2193; <!-- Downward arrow -->
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/js/splide.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new Splide('#image-carousel', {
+                type: 'loop',
+                perPage: 1,
+                autoplay: true,
+                interval: 3000,
+            }).mount();
+        });
+    </script>
+</body>
+</html>

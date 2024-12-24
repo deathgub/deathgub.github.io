@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATH TIME!!!</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(120deg, #ff99c8, #ffe6e6, #ff99c8);
+            background-size: 200% 200%;
+            animation: moveBackground 6s infinite;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        header {
+            background-color: #ff99c8;
+            color: white;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .image-box {
+            text-align: center;
+            flex: 1;
+            max-width: 300px;
+        }
+        .image-box img {
+            max-width: 100%;
+            height: auto;
+            border: 5px solid #ff99c8;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-height: 150px; /* Adjust height for uniform alignment */
+        }
+        .hidden-image {
+            display: none;
+            margin-top: 10px;
+        }
+        button {
+            background-color: #ff99c8;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #e60073;
+        }
+        .arrow-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px; /* Space between the arrows */
+            margin-top: 20px;
+        }
+        .arrow {
+            font-size: 2rem;
+            color: #e60073;
+            cursor: pointer;
+            animation: arrowBounce 1.5s infinite;
+        }
+        .arrow:hover {
+            color: #cc005f;
+        }
+        @keyframes moveBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        @keyframes arrowBounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MATH TIME</h1>
+    </header>
+
+    <div class="image-container">
+        <!-- First Image Box -->
+        <div class="image-box">
+            <img src="real.png" alt="Guess Image 1">
+            <button onclick="showAnswer('answer1')">Click for Answer</button>
+            <img id="answer1" class="hidden-image" src="i.jpg" alt="Answer 1">
+        </div>
+        <!-- Second Image Box -->
+        <div class="image-box">
+            <img src="equation.png" alt="Guess Image 2">
+            <button onclick="showAnswer('answer2')">Click for Answer</button>
+            <img id="answer2" class="hidden-image" src="heart.png" alt="Answer 2">
+        </div>
+        <!-- Third Image Box -->
+        <div class="image-box">
+            <img src="complex_equation_display.png" alt="Guess Image 3">
+            <button onclick="showAnswer('answer3')">Click for Answer</button>
+            <img id="answer3" class="hidden-image" src="u.png" alt="Answer 3">
+        </div>
+    </div>
+
+    <!-- Upward and Downward Navigation Arrows -->
+    <div class="arrow-container">
+        <div class="arrow" onclick="window.location.href='page6.html';">
+            &#x2191; <!-- Upward arrow -->
+        </div>
+        <div class="arrow" onclick="window.location.href='lastpage.html';">
+            &#x2193; <!-- Downward arrow -->
+        </div>
+    </div>
+
+    <script>
+        function showAnswer(answerId) {
+            const answerImage = document.getElementById(answerId);
+            if (answerImage.style.display === 'none' || !answerImage.style.display) {
+                answerImage.style.display = 'block';
+            } else {
+                answerImage.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
